@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <!-- Créez une liste <ul> avec 2 <li> existants. Ajoutez un événement au clic sur chaque <li>
+         pour le rayer (classe CSS). Ensuite, ajoutez un input et un bouton permettant de créer 
+         de nouveaux <li>. Constatez et expliquez pourquoi le clic pour rayer ne fonctionne pas 
+            sur les éléments nouvellement ajoutés. -->
+
+
+
+
+    <style>
+  #todo li { cursor: pointer; padding: 4px 0; }
+  .done { text-decoration: line-through; opacity: 0.5; }
+</style>
+ 
+<ul id="todo">
+  <li>Apprendre le DOM</li>
+  <li>Pratiquer les événements</li>
+</ul>
+<div class="row">
+  <input type="text" id="todo-input" placeholder="Nouvelle tâche">
+  <button id="add-btn">Ajouter</button>
+</div>
+</body>
+
+<script>
+
+const todo=document.getElementById("todo");
+const input =document.getElementById("todo-input");
+const btn =document.getElementById("add-btn");
+
+let stock="";
+btn.addEventListener("click" , ()=>{
+    
+//   if (input.value.trim() === "") return;
+stock=input.value;
+// console.log(stock);
+const li = document.createElement("li");
+li.textContent=stock;
+todo.appendChild(li);
+input.value = "";
+
+})
+</script>
+</html>

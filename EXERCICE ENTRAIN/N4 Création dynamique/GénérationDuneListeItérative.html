@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <!-- Énoncé
+À partir d'un tableau contenant 5 noms de langages de programmation, 
+créez dynamiquement un élément <ul>. Bouclez sur le tableau pour créer 
+    un <li> pour chaque langage, ajoutez-le au <ul>, puis insérez le <ul> 
+        complet dans le DOM. -->
+
+
+<h2>Langages de programmation</h2>
+<div id="list-container"></div>
+</body>
+
+
+
+</html>
+
+<script>
+const langages = ["JavaScript", "Python", "Rust", "Go", "TypeScript"];
+
+const uldynamique = document.createElement("ul");
+
+
+
+langages.forEach((opt)=>{
+    const li = document.createElement("li");
+//    console.log(li);
+    li.textContent=opt;
+    // console.log(uldynamique.appendChild(li));
+    
+    uldynamique.appendChild(li);
+})
+document.getElementById("list-container").appendChild(uldynamique);
+</script>

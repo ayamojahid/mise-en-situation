@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+
+
+<body>
+
+<input type="text" id="search">
+
+<div id="elements"></div>
+
+
+<script>
+
+    const products = [
+    "Clavier",
+    "Souris",
+    "Écran",
+    "Casque"
+];
+
+
+
+const elementsDiv=document.querySelector("#elements");
+const searchelement = document.querySelector("#search");
+
+
+
+function remplir() {
+  products.forEach( (opt)  => {
+   elementsDiv.innerHTML+=`
+   <ul>         ${opt}      </ul>
+   `
+  })
+}
+remplir() 
+
+function search(){
+    searchelement.addEventListener("input" , function() {
+        console.log(searchelement.value)
+    })
+}
+</script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+  <!-- Interaction entre multiples éléments
+Événements basiques — Interactivité
+
+Énoncé
+Créez une zone de texte vide (<p>) et 3 boutons représentant des couleurs ("Rouge", "Vert", "Bleu"). 
+  Au survol (mouseenter) de chaque bouton, le texte du paragraphe doit se mettre à jour pour afficher "Vous 
+  survolez la couleur [Nom de la couleur]". -->
+  
+    <p id="info"></p>
+<div class="row">
+  <button class="color-btn">Rouge</button>
+  <button class="color-btn">Vert</button>
+  <button class="color-btn">Bleu</button>
+</div>
+</body>
+
+
+
+<script>
+const info = document.getElementById("info");
+const colorButtons = document.querySelectorAll(".color-btn");
+
+colorButtons.forEach((e) => {
+e.addEventListener("mouseenter" , ()=>{
+  info.textContent=`Vous survolez la couleur  ${e.textContent}`;
+})
+})
+</script>
+
+</html>

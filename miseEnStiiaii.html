@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input  id="input">
+    <button id="btn">Ajouter</button>
+    <ul id="ulElement">
+
+    </ul>
+
+</body>
+
+<script>
+    const input = document.getElementById("input");
+    const btn = document.getElementById("btn");
+
+    const container = document.getElementById("ulElement")
+    let arr=["salma" , "mahmoud"];
+  
+    let li;
+    arr.forEach((opt)=>{
+     li = document.createElement("li");
+     li.textContent=opt;
+     container.appendChild(li);
+    })
+   
+    const stock="";
+    btn.addEventListener("click" , ()=>{
+        const li1 =document.createElement("li");
+        li1.classList.add("all1element");
+       li1.textContent = input.value;
+       container.appendChild(li1);
+       arr.push(li1.textContent);
+       console.log(arr);
+     input.value="";
+        remove()
+      
+    })
+ 
+    
+    function remove() {
+    const allLi1=document.querySelectorAll(".all1element");
+    console.log(allLi1)
+          allLi1.forEach((opt)=>{
+            console.log("salam")
+        console.log(opt);
+        opt.addEventListener("click" , ()=>{
+            arr.pop(opt);
+            opt.remove();
+            console.log(arr);
+        })
+     })
+    }
+   
+    
+
+</script>
+
+</html>

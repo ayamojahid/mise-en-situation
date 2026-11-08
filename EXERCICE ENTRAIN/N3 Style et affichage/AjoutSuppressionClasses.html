@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+   <!-- Ajout et suppression de classes (état actif)
+Style et affichage — CSS via JavaScript
+
+Énoncé
+Vous avez une liste d'éléments <li> représentant un menu de navigation. En CSS, 
+    créez une classe .active (ex: fond bleu, texte blanc). En JS, au clic sur un <li>, 
+        supprimez la classe .active de tous les <li> (via classList.remove()), puis ajoutez-la uniquement
+             à l'élément cliqué (classList.add()).  -->
+
+<style>
+  .menu { list-style: none; display: flex; gap: 4px; padding: 0; }
+  .menu li { padding: 8px 14px; border-radius: 6px; cursor: pointer; border: 1px solid #e2e8f0; }
+  .menu li.active { background: #1d4ed8; color: #fff; border-color: #1d4ed8; }
+</style>
+ 
+<nav>
+  <ul class="menu">
+    <li class="active">Accueil</li>
+    <li>Produits</li>
+    <li>Blog</li>
+    <li>Contact</li>
+  </ul>
+</nav>
+
+</body>
+<script>
+const allLi =document.querySelectorAll("li");
+console.log(allLi);
+
+
+allLi.forEach((e)=>{
+ e.addEventListener("click" , ()=>{
+    allLi.forEach((li)=>li.classList.remove("active"));
+     e.classList.add("active");  
+ })
+})
+
+
+
+
+
+
+</script>
+
+
+</html>

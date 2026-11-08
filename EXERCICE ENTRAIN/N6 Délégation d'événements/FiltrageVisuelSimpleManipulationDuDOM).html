@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- Affichez une dizaine de Cards dans la page. Ajoutez une barre de recherche. 
+À chaque frappe, parcourez toutes les Cards du DOM. Si le texte de la Card
+ ne contient pas la chaîne cherchée, masquez-la avec style.display = 'none'. 
+ Sinon, affichez-la avec display = 'block'. -->
+
+
+     
+<input type="search" id="search" placeholder="Rechercher un aliment">
+<div class="grid" id="cards"></div>
+<div id="resultats"></div>
+</body>
+
+<script>
+const aliments = [
+  { nom: "Pomme", categorie: "Fruits" },
+  { nom: "Banane", categorie: "Fruits" },
+  { nom: "Carotte", categorie: "Légumes" },
+  { nom: "Brocoli", categorie: "Légumes" },
+  { nom: "Fraise", categorie: "Fruits" },
+  { nom: "Épinard", categorie: "Légumes" },
+  { nom: "Riz", categorie: "Céréales" },
+  { nom: "Avoine", categorie: "Céréales" },
+  { nom: "Mangue", categorie: "Fruits" },
+  { nom: "Quinoa", categorie: "Céréales" },
+];
+const resultats = document.getElementById("resultats");
+const grid=document.getElementById("cards");
+const search=document.getElementById("search")
+aliments.forEach((article)=>{
+   const card =document.createElement("div");
+   card.classList.add("card");
+
+    const h3=document.createElement("h3");
+    h3.textContent=article.nom;
+
+    const p = document.createElement("p");
+    p.textContent=article.categorie;
+
+    card.append(h3 , p);
+    grid.appendChild(card);
+})
+
+
+// search.addEventListener("input" , ()=>{
+//     aliments.forEach((opt)=>{
+//     //  let elelower=opt.nom.toLowerCase();
+//     //  console.log(elelower)
+//     //   let stock=search.value.toLowerCase();
+// // const ana=    elelower.includes(stock);
+// // console.log("ana22" + ana);
+
+// const resultat = elelower.filter((article)=>{
+//     return elelower.includes(stock);
+// })
+// console.log(resultat);
+//     })
+  
+
+// })
+search.addEventListener("input", () => {
+
+    const stock = search.value.toLowerCase();
+
+    const resultat = aliments.filter((article) => {
+        return article.nom.toLowerCase().includes(stock);
+    });
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach((card, index) => {
+
+        if (resultat.includes(aliments[index])) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
+</script>
+</html>

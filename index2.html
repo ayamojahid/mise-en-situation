@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+// findMax(10, 25, 15); // 25
+// findMax(8, 3, 12);   // 12
+// findMax(5, 5, 5);    // 5
+// findMax(-2, -8, -1); // -1
+
+
+// function findMax(a, b, c) {
+//  let plusGrantelement = a ;
+// if(a>b){
+// plusGrantelement=a;  }
+// else plusGrantelement=b;
+ 
+// let pl2;
+// if (plusGrantelement>c) {
+// pl2=plusGrantelement;
+// } 
+// else(pl2=c);
+
+// console.log(pl2)
+// }
+// findMax(10, 25, 15); // 25
+// findMax(8, 3, 12);   // 12
+// findMax(5, 5, 5);    // 5
+// findMax(-2, -8, -1); // -1
+
+// countVowels("hello");      // 2
+// countVowels("JavaScript"); // 3
+// countVowels("xyz");        // 0
+// countVowels("AEIOU");      // 5
+// countVowels("YouCode");    // 4
+// countVowels("");           // 0
+
+// Les voyelles considérées sont : a, e, i, o, u.
+
+
+function countVowels(text) {
+ for(let i = 0 ; i<text.length ; i++) {
+    let varible=0;
+
+console.log(text[i])
+    //   if(text[i] = "a" || text[i] = "e" ||  text[i] = "i" || text[i] ="o" || text[i] ="u")  {
+    //     varible++;
+    //   }
+
+    if(text[i] = "a") {
+        varible++;
+    }
+    return varible;
+    // if( text[i] = "e" ){
+    //     varible++
+    // }
+    // if( text[i] = "i" ) {
+    //     varible++
+    // }
+    // if(text[i] ="o" ) {
+    //     varible++
+    // }
+
+    // if(text[i] ="u") {
+    //     varible++;
+    // }
+
+   
+ }  
+}
+
+countVowels("hello");
+
+    </script>
+</body>
+</html>

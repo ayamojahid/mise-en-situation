@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <!-- Résolvez le problème de l'exercice précédent. 
+    Supprimez les écouteurs sur les <li>. Placez un 
+        seul écouteur d'événement sur l'élément parent
+         (<ul>). Utilisez event.target.closest('li') pour 
+        identifier l'élément cliqué et le rayer, qu'il soit d'origine 
+        ou ajouté dynamiquement. -->   
+</body>
+
+   <script>
+    
+    const tab=[];
+
+    const div = document.createElement("div");
+    const ul = document.createElement("ul");
+    const botton = document.createElement("button");
+   botton.textContent="Ajouter";
+    const input = document.createElement("input");
+    input.setAttribute("placeholder" , "Entrer votre to do")
+    div.append(input, ul , botton );
+    document.body.append(div);
+    botton.addEventListener("click" , Ajouter )
+  function Ajouter() {
+     const li = document.createElement("li");
+        if(input.value!= "") {
+        li.textContent=input.value;
+        tab.push(input.value)
+        ul.append(li);
+        // li.classList.add("AllLi");
+        input.value="";
+        console.log(tab)
+        } } 
+
+    function supprimer() {
+    //  const elementLI = document.querySelectorAll(".AllLi");
+    
+
+    ul.addEventListener("click" , (event)=>{
+        const opt = event.target.closest("li");
+        console.log(opt)
+        if(opt) {
+            const index = tab.indexOf(opt.textContent);
+            console.log("index est " + index);
+            
+            tab.splice(index , 1);
+            opt.remove();
+        }
+        console.log(tab);
+        
+    }
+
+    )
+
+
+
+
+
+//     elementLI.forEach((opt)=>{
+//      opt.addEventListener("click" , ()=>{
+//      opt.classList.toggle("class");
+//      tab.splice(opt, 1)
+//         console.log(tab)
+
+//     }) }
+// ) 
+
+}
+        supprimer() ;
+
+
+   </script>  
+   <style>
+    .class{
+    color: red;
+    text-decoration: line-through;
+    }
+</style>
+</html>

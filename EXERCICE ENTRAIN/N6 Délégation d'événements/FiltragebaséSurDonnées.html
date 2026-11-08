@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="search" id="search" placeholder="Rechercher un aliment">
+<div class="grid" id="cards"></div>
+</body>
+
+<script>
+    const aliments = [
+  { nom: "Pomme", categorie: "Fruits" },
+  { nom: "Banane", categorie: "Fruits" },
+  { nom: "Carotte", categorie: "Légumes" },
+  { nom: "Brocoli", categorie: "Légumes" },
+  { nom: "Fraise", categorie: "Fruits" },
+  { nom: "Épinard", categorie: "Légumes" },
+  { nom: "Riz", categorie: "Céréales" },
+  { nom: "Avoine", categorie: "Céréales" },
+  { nom: "Mangue", categorie: "Fruits" },
+  { nom: "Quinoa", categorie: "Céréales" },
+];
+
+
+
+
+
+search.addEventListener("input" , (e)=>{
+    // console.log("hey")
+
+aliments.forEach((opt)=>{
+const ev = e.target.value.toLowerCase();
+const tabFilert = aliments.filter((opt)=>{
+    return opt.nom.toLocaleLowerCase().includes(ev);
+})
+console.log(tabFilert);
+cards.innerHTML="";
+remplir(tabFilert)
+})
+})
+
+
+function remplir(table) {
+const cards=document.getElementById("cards");
+const search = document.getElementById("search");
+table.forEach((opt)=>{
+const div =document.createElement("div");
+const h3 = document.createElement("h3");
+const p = document.createElement("p");
+h3.textContent=opt.nom;
+p.textContent=opt.categorie;
+div.append(h3 , p );
+div.classList.add("divcard");
+cards.appendChild(div);
+})
+}
+remplir(aliments) ;
+
+
+</script>
+<style>
+    .grid{
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 12px;
+        font-size: 1.2rem;
+    }
+
+   .divcard{
+    border-style: solid;
+    border-color: rgba(105, 105, 105, 0.671);
+    border-width: 0.12em;
+    border-radius: 12px;
+    min-width: 30%;
+   }
+   p{
+    color:rgba(207, 39, 39, 0.725);
+   }
+</style>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <ul id="imMe"></ul>
+</body>
+
+<script>
+    const products = [
+    "Clavier",
+    "Souris",
+    "Écran",
+    "Casque"
+];
+
+const imMe = document.getElementById("imMe");
+
+products.forEach((opt)=>{
+    const li = document.createElement("li"); 
+    const count =document.createElement("p");
+    count.textContent=0;
+    count.classList.add("count");
+    const p1 =document.createElement("button");
+    p1.textContent="+";
+    p1.classList.add("plus");
+
+     const p2 =document.createElement("button");
+    p2.textContent="-";
+    p2.classList.add("moins");
+
+    li.textContent=opt;
+
+    imMe.append(li ,p1,count,p2 );
+})
+
+const allbtnplus=document.querySelectorAll(".plus");
+// console.log(allbtn)
+const allbtnmoin=document.querySelectorAll(".moins");
+// console.log(allbtnmoin);
+const count =document.querySelectorAll(".count");
+// console.log(count)
+allbtnplus.forEach((opt , index)=>{
+    opt.addEventListener("click" , ()=>{
+        // console.log(count[index])
+        count[index].textContent++;
+    })
+})
+allbtnmoin.forEach((opt , index)=>{
+    console.log("opt : " + opt);
+    console.log("index" , + index);
+    
+
+    opt.addEventListener("click" , ()=>{
+        // console.log(count[index])
+        if( count[index].textContent>0){
+            count[index].textContent--;
+        }
+        
+    })
+})
+
+</script>
+</html>

@@ -1,0 +1,100 @@
+*{
+padding: 0;
+margin: 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+header h1{
+ font-size: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+span{
+    color: chocolate;
+   
+}
+nav a{
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    color: rgb(112, 10, 10);
+    padding: 1rem;
+    font-weight: 900;
+}
+
+.section0{
+ background-color: rgba(225, 156, 141, 0.429);   
+}
+.btn{
+    background-color: rgb(247, 122, 91);
+    margin: 4px;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    
+}
+
+.section1{
+align-items: center;
+background-color: rgba(150, 119, 119, 0.192);
+height: 600px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+
+.section1 .all {
+    display: flex;
+    gap: 12px;
+    justify-content: space-around;
+}
+.section .tout{
+    margin-top: 17px;
+}
+
+
+
+.tout{
+border-style: solid;
+border-color: rgb(105, 78, 41);
+}
+
+button{
+    background-color: rgb(69, 171, 171);
+    font-size: 1rem;
+}
+@media screen and (max-width: 600px) {
+   header{
+    display: flex;
+    flex-direction: column;
+    
+   }
+
+
+   header nav{
+    display: flex;
+   }
+
+.section1{
+        height: 700px;
+
+}
+   .section1 .all {
+    display: flex;
+    flex-direction: column;
+   }
+
+   section img{
+    width: 100%;
+   }
+}
+
+
+

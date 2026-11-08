@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+   <!-- Créez un élément <img> dynamiquement. Ajoutez-lui un attribut source via setAttribute('src', '...'), 
+   un texte alternatif, et une classe CSS spécifique. Insérez 
+   cette image dans une <div> conteneur existante.  -->
+
+
+<style>
+  .rounded-img { width: 100%; max-width: 620px; border-radius: 12px; display: block; }
+</style>
+ 
+<div id="image-container" class="card"></div>
+
+
+</body>
+<script>
+    const contnaier=document.getElementById("image-container");
+    const imageUrl = "/images/paysage.png";
+    
+    
+const img=document.createElement("img");
+img.classList.add("rounded-img")
+console.log(img)
+
+img.setAttribute("src" , imageUrl);
+img.setAttribute("alt" , "Lac de montagne au lever du soleil");
+
+
+contnaier.appendChild(img);
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <!-- Sur un champ de mot de passe, écoutez la saisie. Si le texte fait 
+    moins de 8 caractères, appliquez une classe CSS qui met la bordure 
+    en rouge. Dès que la longueur atteint 8 caractères, changez la classe
+     pour mettre la bordure en vert. -->
+
+
+<style>
+  .invalid { border: 2px solid #dc2626 !important; }
+  /* input:focus {
+    outline: none;
+    border: none;
+} */
+ input:focus {
+    outline: none;
+}
+  .valid { border: 2px solid #16a34a !important; }
+</style>
+
+<label>Mot de passe (8 caractères minimum)
+  <input type="password" id="password">
+</label>
+</body>
+
+<script>
+    
+const input = document.getElementById("password");
+input.addEventListener("input" , () =>{
+    const isValid = input.value.length >=8;
+    input.classList.toggle("valid" , isValid);
+    input.classList.toggle("invalid" , !isValid);
+
+})
+</script>
+
+
+
+
+
+
+
+
+</html>

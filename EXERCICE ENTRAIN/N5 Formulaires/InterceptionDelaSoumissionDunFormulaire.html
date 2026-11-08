@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+<!-- Créez un <form> contenant deux inputs et un bouton submit. 
+Écoutez l'événement submit sur le formulaire. Utilisez 
+event.preventDefault() pour empêcher le rechargement de la page. 
+Récupérez les valeurs des inputs et consolidez-les dans un objet 
+JS affiché dans la console. -->
+
+
+    
+    <form id="signup-form" class="stack">
+  <label>Nom d'utilisateur
+    <input type="text" name="username" required>
+  </label>
+  <label>Email
+    <input type="email" name="email" required>
+  </label>
+  <button type="submit">Envoyer</button>
+</form>
+</body>
+
+<script>
+const form = document.getElementById("signup-form");
+form.addEventListener("submit", (event) => {
+   event.preventDefault();
+
+     const formData = {
+    username: form.username.value,
+    email: form.email.value,
+  };
+
+  
+  console.log(formData);
+
+});
+</script>
+
+</html>

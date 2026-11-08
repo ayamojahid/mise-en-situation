@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+
+<body>
+    <!-- Modification de style en ligne (inline style)
+Style et affichage — CSS via JavaScript
+
+Énoncé
+Sélectionnez un paragraphe et un bouton. Au clic sur le bouton, modifiez directement
+ les propriétés style.color et style.fontSize du paragraphe pour le mettre en rouge et 
+ agrandir sa taille. -->
+ 
+<p id="text">Ce texte va changer de style.</p>
+<button id="style-btn">Styliser</button>
+</body>
+
+
+<script>
+const texte = document.getElementById("text");
+const styleBtn = document.getElementById("style-btn");
+
+styleBtn.addEventListener("click" , () => {
+texte.style.fontSize="3rem";
+texte.style.color="red";
+})
+
+</script>
+</html>

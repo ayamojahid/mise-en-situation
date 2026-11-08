@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+Altération de l'élément déclencheur
+Événements basiques — Interactivité
+
+Énoncé
+Reprenez le bouton précédent. Modifiez la fonction déclenchée lors du clic pour que le 
+bouton change son propre texte
+ (ex: de "Cliquez-moi" à "C'est cliqué !") en utilisant le mot-clé this ou event.target. -->
+
+
+
+
+ <body>
+  <button id="btn">Cliquez-moi</button>
+</body>
+
+
+
+
+
+
+ <script>
+          const button = document.getElementById("btn");
+        button.addEventListener("click", function(event) {
+            event.target.textContent="C'est cliqué !";
+});
+    </script>
+</html>

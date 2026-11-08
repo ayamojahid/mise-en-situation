@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <!-- Gardez un champ input texte. Au lieu d'attendre un clic, attachez un
+     événement input ou keyup sur ce champ. Mettez à jour le contenu d'un
+      paragraphe en temps réel : chaque lettre tapée ou effacée doit se
+       refléter instantanément dans le paragraphe. -->
+
+<input type="text" id="live-input" placeholder="Tapez en direct">
+<p>Aperçu : <strong id="live-output"></strong></p>
+
+</body>
+
+<script>
+const input =document.getElementById("live-input");
+const span =document.getElementById("live-output");
+
+input.addEventListener("input" , (e)=>{
+    console.log(e)
+    console.log(e.target)
+    span.textContent=e.target.value;
+})
+</script>
+
+</html>

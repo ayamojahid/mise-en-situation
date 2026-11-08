@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Créez un bouton "Afficher/Masquer les détails" et une <div> contenant du texte. Au clic, vérifiez la propriété
+         style.display de la <div>. Si elle est à 'none', passez-la à 'block'. Sinon, passez-la à 'none'. -->
+
+
+<button id="toggle-btn">Afficher/Masquer les détails</button>
+<div id="details" class="card" style="display: none;">
+  <p>Voici les détails cachés. Le DOM permet de les révéler sans recharger la page.</p>
+</div>
+
+        </body>
+    
+        <script>
+           const toggleBtn = document.getElementById("toggle-btn");
+             const details = document.getElementById("details");
+
+             toggleBtn.addEventListener("click" , ()=>{
+               if( details.style.display === "none") {
+               details.style.display = "block"
+               }
+               else{
+                details.style.display = "none"
+               }
+             })
+        </script>
+</html>

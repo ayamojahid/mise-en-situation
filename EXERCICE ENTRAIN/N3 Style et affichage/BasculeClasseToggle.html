@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- Bascule de classe (classList.toggle)
+Style et affichage — CSS via JavaScript
+
+Énoncé
+Implémentez un bouton "Dark Mode". En CSS, préparez une classe .dark-theme qui inverse
+ les couleurs de fond et de texte. En JS, au clic sur le bouton, utilisez document.body.classList.toggle('dark-theme') 
+ pour activer ou désactiver le mode sombre instantanément. -->
+<body>
+ <style>
+  body { transition: background 0.2s, color 0.2s; }
+  body.dark-theme { background: #0f172a; color: #f8fafc; }
+</style>
+ 
+<h2>Mon article</h2>
+<p>Basculez le thème avec le bouton ci-dessous.</p>
+<button id="theme-btn">Dark Mode</button>    
+</body>
+
+<script>
+const btn = document.getElementById("theme-btn");
+// let body = document.querySelector("body");
+
+console.log(btn);
+
+btn.addEventListener("click" , ()=>{
+document.body.classList.toggle("dark-theme");
+
+})
+</script>
+
+
+</html>

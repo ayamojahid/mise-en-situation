@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<!-- 
+/*Énoncé
+Déclarez une variable contenant une chaîne de caractères (ex: votre prénom). Sélectionnez un élément HTML de type
+ <span> possédant un ID spécifique. Injectez la valeur de votre variable à l'intérieur de ce <span> en utilisant 
+    la propriété textContent.*/ -->
+
+
+    <span id="nom"> </span>
+<hr>
+    <!-- Hydratation multiple depuis un objet
+Affichage et Sélection — L'injection de données
+
+Énoncé
+Déclarez un objet représentant un utilisateur (nom, email, rôle). Dans votre HTML, vous avez une "Card"
+ contenant 3 éléments vides (un <h2> pour le nom, deux <p> pour l'email et le rôle), chacun ayant un ID unique. Sélectionnez chaque élément 
+    un par un, et affectez-y la propriété correspondante de votre objet. -->
+
+    <div class="card">
+        <h2 id="nomprenom2"></h2>
+
+        <p id="email"></p>
+        <p id="role"></p>
+    </div>
+    <hr>
+
+
+    <!-- Ciblage contextuel (sélection depuis le parent)
+Affichage et Sélection — L'injection de données
+
+Énoncé
+Reprenez l'objet précédent. Cette fois, les éléments de la Card n'ont pas d'ID, mais des classes (.card-title, .card-email, etc.).
+ Sélectionnez d'abord l'élément parent (la Card entière). Ensuite, utilisez parent.querySelector('.class') pour cibler les éléments 
+ enfants et injecter les données de l'objet. -->
+
+
+ <article class="cardusercard">
+  <h2 class="card-titlee"></h2>
+  <p class="card-emaill"></p>
+  <p class="card-rolee"></p>
+</article>
+
+<hr>
+
+<!-- 
+Peuplement de structures statiques (boucle et index)
+Affichage et Sélection — L'injection de données
+
+Énoncé
+Vous avez un tableau de 4 objets utilisateurs et exactement 4 Cards HTML vides déjà présentes dans le DOM.
+ Sélectionnez toutes les Cards (via querySelectorAll). Utilisez une boucle pour itérer sur la liste des Cards, 
+ et servez-vous de l'index de la boucle pour injecter les données de l'objet correspondant dans chaque Card. -->
+
+ <div class="grid">
+  <article class="cardUser">
+    <h2 class="card-title"></h2>
+    <p class="card-email"></p>
+    <p class="card-role"></p>
+  </article>
+  <article class="cardUser">
+    <h2 class="card-title"></h2>
+    <p class="card-email"></p>
+    <p class="card-role"></p>
+  </article>
+  <article class="cardUser">
+    <h2 class="card-title"></h2>
+    <p class="card-email"></p>
+    <p class="card-role"></p>
+  </article>
+  <article class="cardUser">
+    <h2 class="card-title"></h2>
+    <p class="card-email"></p>
+    <p class="card-role"></p>
+  </article>
+</div>
+<hr>
+    
+<!-- Votre tableau contient des objets utilisateurs ayant chacun un ID unique. Vos Cards HTML statiques 
+possèdent un attribut data-user-id correspondant. Parcourez votre tableau d'objets, et pour chaque objet,
+ trouvez la Card HTML spécifique grâce à son attribut de donnée (querySelector('[data-user-id="..."]')), 
+ puis remplissez-la. -->
+
+ <!-- Attention : l'ordre des Cards ne correspond PAS à l'ordre du tableau -->
+<div class="grid">
+  <article class="carde" data-user-id="3">
+    <h2 class="card-title"></h2>
+    <p class="card-email"></p>
+    <p class="card-role"></p>
+  </article>
+  <article class="carde" data-user-id="1">
+    <h2 class="card-title"></h2>
+    <p class="card-email"></p>
+    <p class="card-role"></p>
+  </article>
+  <article class="carde" data-user-id="4">
+    <h2 class="card-title"></h2>
+    <p class="card-email"></p>
+    <p class="card-role"></p>
+  </article>
+  <article class="carde" data-user-id="2">
+    <h2 class="card-title"></h2>
+    <p class="card-email"></p>
+    <p class="card-role"></p>
+  </article>
+</div>
+<hr>
+</body>
+<script>
+    // ex1
+    const nomprenom=document.getElementById("nom");
+    nomprenom.textContent="Mon nom est aya mojahid"
+
+
+// exo2
+    const obj= {
+        nom: "ayamojahid",
+        email : "ayyatt03gmail.com",
+        role  : "owner"
+    }
+    document.getElementById("nomprenom2").textContent=obj.nom;
+    document.getElementById("email").textContent=obj.email;
+    document.getElementById("role").textContent=obj.role;
+    
+
+    // exo3
+    const user = {
+  nom: "Karim Benali",
+  email: "karim@exemple.com",
+  role: "Administrateur",
+};
+
+const cardUserCard = document.querySelector(".cardusercard");
+cardUserCard.querySelector(".card-titlee").textContent=user.nom;
+cardUserCard.querySelector(".card-emaill").textContent=user.email;
+cardUserCard.querySelector(".card-rolee").textContent=user.role;
+
+
+// exo4
+const users = [
+  { id: 1, nom: "Karim Benali", email: "karim@exemple.com", role: "Administrateur" },
+  { id: 2, nom: "Sofia Martin", email: "sofia@exemple.com", role: "Éditrice" },
+  { id: 3, nom: "Yanis Haddad", email: "yanis@exemple.com", role: "Développeur" },
+  { id: 4, nom: "Léa Dubois", email: "lea@exemple.com", role: "Designer" },
+];
+
+
+const allcard = document.querySelectorAll(".cardUser");
+console.log(allcard);
+
+for(let i = 0 ; i< allcard.length ; i++) {
+   
+
+allcard[i].querySelector(".card-title").textContent=users[i].nom;
+
+allcard[i].querySelector(".card-email").textContent=users[i].email;
+
+allcard[i].querySelector(".card-role").textContent=users[i].role
+ 
+
+}
+
+
+// exo5
+const use = [
+  { id: 1, nom: "Karim Benali", email: "karim@exemple.com", role: "Administrateur" },
+  { id: 2, nom: "Sofia Martin", email: "sofia@exemple.com", role: "Éditrice" },
+  { id: 3, nom: "Yanis Haddad", email: "yanis@exemple.com", role: "Développeur" },
+  { id: 4, nom: "Léa Dubois", email: "lea@exemple.com", role: "Designer" },
+];
+
+// const elle1 = document.querySelector(".carde").getAttribute("data-user-id");
+// const elle2 = document.querySelector(".carde");
+
+
+// console.log("ana tanyy" , elle2.dataset);
+// console.log("ana2 " + elle2)
+// console.log("ana " + elle1)
+
+
+
+use.forEach((user ) => {
+// querySelector('[data-user-id="1"]').textContent=user;
+
+const first=document.querySelector(`[data-user-id="${user.id}"]`);
+
+first.querySelector(".card-title").textContent=user.nom;
+first.querySelector(".card-email").textContent=user.email;
+first.querySelector(".card-role").textContent=user.role;
+})
+
+</script>
+</html>

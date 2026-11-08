@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Gestion d'une collection d'éléments interactifs
+Événements basiques — Interactivité
+
+Énoncé
+Créez 3 boutons différents dans votre HTML. Sélectionnez-les tous en JS, bouclez dessus avec un forEach, 
+et ajoutez le même écouteur d'événement à chacun. Au clic, seul le bouton cliqué doit changer son texte. -->
+
+
+<body>
+    <div class="row">
+  <button class="btn">Bouton A</button>
+  <button class="btn">Bouton B</button>
+  <button class="btn">Bouton C</button>
+</div>
+<hr>
+<!-- autree exo with diff betwen target et cuurent target -->
+ <!-- Mean = signifie / veut dire. -->
+
+<!-- Dans ton contexte :
+- event.target means: l'élément sur lequel tu as cliqué.
+- event.currentTarget means: l'élément sur lequel tu as installé addEventListener().
+En français :
+- target = la cible de l'événement.
+- currentTarget = la cible actuelle de l'événement. -->
+
+ <button class="btn1">
+    <span>Supprimer</span>
+</button>
+</body>
+
+
+<script>
+const AllButton = document.querySelectorAll(".btn");
+// console.log(AllButton)
+
+AllButton.forEach((opt) => {
+    opt.addEventListener("click" , (event) =>{
+     event.currentTarget.textContent="Clique!"
+    
+    })
+    // console.log(opt);
+    
+})
+
+
+// exo2
+const button = document.querySelector(".btn1");
+button.addEventListener("click", (event) => {
+    console.log("Target :", event.target);
+    console.log("CurrentTarget :", event.currentTarget);
+});
+
+</script>
+</html>

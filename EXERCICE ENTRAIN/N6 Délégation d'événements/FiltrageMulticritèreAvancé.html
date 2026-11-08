@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+<!-- Ajoutez une balise <select> (menu déroulant) pour filtrer par catégorie, 
+    en plus de la barre de recherche textuelle. Écoutez les changements
+     sur les deux champs. Votre logique doit filtrer le tableau de 
+     données initial en appliquant simultanément la condition 
+     de texte ET la condition de catégorie, puis redessiner
+      le DOM avec les résultats exacts. -->
+
+<div class="row">
+  <input type="search" id="search" placeholder="Rechercher un aliment">
+  <select id="category">
+    <option value="all">Toutes les catégories</option>
+    <option value="Fruits">Fruits</option>
+    <option value="Légumes">Légumes</option>
+    <option value="Céréales">Céréales</option>
+  </select>
+</div>
+<div class="grid" id="cards"></div>
+
+
+<script>
+    const aliments = [
+  { nom: "Pomme", categorie: "Fruits" },
+  { nom: "Banane", categorie: "Fruits" },
+  { nom: "Carotte", categorie: "Légumes" },
+  { nom: "Brocoli", categorie: "Légumes" },
+  { nom: "Fraise", categorie: "Fruits" },
+  { nom: "Épinard", categorie: "Légumes" },
+  { nom: "Riz", categorie: "Céréales" },
+  { nom: "Avoine", categorie: "Céréales" },
+  { nom: "Mangue", categorie: "Fruits" },
+  { nom: "Quinoa", categorie: "Céréales" },
+];
+
+
+
+
+const cards = document.getElementById("cards");
+const search = document.getElementById("search");
+const category = document.getElementById("category");
+
+
+function filter() {
+    const texte = search.value.toLocaleLowerCase();
+    const categorie = category.value;
+const tabFilert = aliments.filter((opt)=>{
+const conditionTexte = opt.nom.toLowerCase().includes(texte);
+const conditionCategorie  = categorie === "all" || opt.categorie === categorie;
+return conditionTexte && conditionCategorie;
+})
+remplir(tabFilert)
+}
+
+
+function remplir(table) {
+cards.innerHTML = "";
+table.forEach((opt)=>{
+const div =document.createElement("div");
+const h3 = document.createElement("h3");
+const p = document.createElement("p");
+h3.textContent=opt.nom;
+p.textContent=opt.categorie;
+div.append(h3 , p );
+div.classList.add("divcard");
+cards.appendChild(div);
+})
+}
+
+
+search.addEventListener("input", filter);
+category.addEventListener("change", filter);
+
+remplir(aliments);
+
+</script>
+<style>
+    .grid{
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 12px;
+        font-size: 1.2rem;
+    }
+
+   .divcard{
+    border-style: solid;
+    border-color: rgba(105, 105, 105, 0.671);
+    border-width: 0.12em;
+    border-radius: 12px;
+    min-width: 30%;
+   }
+   p{
+    color:rgba(207, 39, 39, 0.725);
+   }
+</style>
+
+
+</script>
+
+
+</body>
+</html>

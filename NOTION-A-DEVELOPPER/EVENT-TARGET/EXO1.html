@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- Affichez une dizaine de Cards dans la page. Ajoutez une barre de recherche.
+ À chaque frappe, parcourez toutes les Cards du DOM. Si le texte de la Card 
+ ne contient pas la chaîne cherchée, masquez-la 
+ avec style.display = 'none'. Sinon, affichez-la avec display = 'block'. -->
+<input type="search" id="search" placeholder="Rechercher un aliment">
+ 
+<div class="grid" id="cards">
+  <article class="card"><h3>Pomme</h3></article>
+  <article class="card"><h3>Banane</h3></article>
+  <article class="card"><h3>Carotte</h3></article>
+  <article class="card"><h3>Brocoli</h3></article>
+  <article class="card"><h3>Fraise</h3></article>
+  <article class="card"><h3>Épinard</h3></article>
+  <article class="card"><h3>Riz</h3></article>
+  <article class="card"><h3>Avoine</h3></article>
+  <article class="card"><h3>Mangue</h3></article>
+  <article class="card"><h3>Quinoa</h3></article>
+</div>
+
+
+</body>
+<script>
+
+const search =document.getElementById("search")
+const cards=document.getElementById("cards");
+const card = document.querySelectorAll(".card");
+card.forEach((opt)=>{
+
+
+search.addEventListener("input" , (e)=>{
+    const action =e.target.value.toLowerCase();
+//   console.log(action)
+    const content =opt.textContent.toLowerCase();
+   if(content.includes(action)) {
+        opt.style.display="flex";
+    }
+    else{
+        opt.style.display="none"
+    }
+
+})
+
+ 
+})
+
+</script>
+</html>

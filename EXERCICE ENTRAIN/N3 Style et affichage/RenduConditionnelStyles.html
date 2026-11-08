@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+    <!-- Rendu conditionnel de styles basé sur les données
+Style et affichage — CSS via JavaScript
+
+Énoncé
+Vous avez un tableau contenant des notes d'étudiants (ex: [12, 8, 15, 9, 18]). Bouclez 
+sur ce tableau pour afficher chaque note dans une liste HTML. Lors de la création, si la 
+note est >= 10, ajoutez-lui une classe CSS .success (vert). Si elle est < 10, ajoutez une
+ classe .danger (rouge). -->
+
+<style>
+  .success { color: #15803d; font-weight: 600; }
+  .danger { color: #b91c1c; font-weight: 600; }
+</style>
+<h2>Notes des étudiants</h2>
+<ul id="grades"></ul>
+</body>
+
+
+
+
+
+
+
+
+<script>
+const notes = [12, 8, 15, 9, 18];
+const grades = document.getElementById("grades");
+
+notes.forEach((opt)=>{
+    const couleur="";
+    
+   if(opt>=10) {
+    // couleur === "success";
+     grades.innerHTML+=`
+    <li class="success">${opt}/20</li>
+    `
+    // console.log(couleur)
+   }
+   else{
+   couleur === "danger";
+   grades.innerHTML+=`
+    <li class="danger">${opt}/20</li>
+    `
+   }
+
+
+})
+
+
+
+
+
+
+
+</script>
+</html>

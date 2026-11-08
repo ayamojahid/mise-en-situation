@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Gestion d'état (le compteur)
+Événements basiques — Interactivité
+
+Énoncé
+Déclarez une variable d'état let count = 0. Créez un bouton "Incrémenter" et un élément d'affichage (<h2>0</h2>). 
+À chaque clic sur le bouton, augmentez la valeur de la variable count de 1, puis mettez à jour le contenu de l'élément
+ <h2> avec cette nouvelle valeur. -->
+<h2 id="counter">0</h2>
+<button id="increment">Incrémenter</button>
+
+</body>
+<script>
+    const btn = document.getElementById("increment");
+    const counter = document.getElementById("counter");
+let count = 0;
+
+
+    btn.addEventListener("click" , ()=> {
+        // console.log(counter.textContent++)
+        count++;
+        counter.textContent=count;
+    })
+
+</script>
+</html>

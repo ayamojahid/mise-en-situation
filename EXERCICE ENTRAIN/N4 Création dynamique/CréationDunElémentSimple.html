@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Création d'un élément simple
+Création dynamique — Le CRUD du DOM
+
+Énoncé
+Utilisez document.createElement('p') pour générer un nouveau paragraphe. Ajoutez-y du texte, puis utilisez appendChild pour l'insérer à la fin du document.body. L'élément HTML d'origine ne doit pas exister dans le fichier HTML.
+ -->
+
+<body>
+    <h2>Création dynamique</h2>
+<!-- Aucun paragraphe ici : il sera créé en JavaScript -->
+</body>
+
+<script>
+
+
+const p = document.createElement("p");
+p.textContent="Ce paragraphe a été créé avec JavaScript.";
+document.body.appendChild(p);
+
+
+</script>
+</html>
